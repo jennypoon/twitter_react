@@ -12,6 +12,7 @@ class Tweets extends Component {
     }
 
     this.getList = this.getList.bind(this)
+    this.displayTweets = this.displayTweets.bind(this)
   }
 
   getList() {
@@ -21,6 +22,14 @@ class Tweets extends Component {
       })
   }
 
+  displayTweets(tweets) {
+    return tweets.map((tweet) => {
+      console.log("DISPLAY TWEETS", tweets)
+      return <TweetCard tweet={tweet}/>
+    })
+  }
+
+
   componentDidMount() {
     this.getList();
   }
@@ -29,7 +38,7 @@ class Tweets extends Component {
     console.log(this.state)
     return (
       <div className="tweetsContainer">
-        <TweetCard />
+        {this.displayTweets(this.state.tweets)}
       </div>
     )
   }
