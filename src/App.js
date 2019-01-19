@@ -8,8 +8,10 @@ import './styling/App.scss';
 class App extends Component {
   render() {
     return (
-      <Header />
-      <Tweets />
+      <div>
+        <Header />
+        <Tweets />
+      </div>
     );
   }
 }

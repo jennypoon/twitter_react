@@ -5,7 +5,7 @@ class Tweets extends Component {
   render() {
 
     return (
-      <div className="header">
+      <div className="tweetsContainer">
 
       </div>
     )
