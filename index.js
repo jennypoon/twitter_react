@@ -29,6 +29,7 @@ app.get('/api/tweets', (req,res) => {
     .select('*')
     .asCallback((err, data) => {
       console.log("QUERY DONE")
+      console.log(data)
       if (err) throw err;
       res.json(data);
     });
