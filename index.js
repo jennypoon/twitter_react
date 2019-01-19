@@ -23,6 +23,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+//QUERY FOR RSVP
+app.get('/api/tweets', (req,res) => {
+  knex('tweets')
+    .select('*')
+    .asCallback((err, data) => {
+      console.log("QUERY DONE")
+      if (err) throw err;
+      res.json(data);
+    });
+});
 
 
 app.get('*', (req, res) => {
