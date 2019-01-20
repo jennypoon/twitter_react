@@ -28,9 +28,17 @@ padding-top: 50px;
 
 /*TWEETS*/
 .leftContainer {
+
   padding: 20px;
   width: 25%;
   position: absolute;
+
+  @media screen and (max-width: 900px) {
+    margin: 10px;
+    align-content: center;
+    position: relative;
+    width: 90%;
+  }
 }
 .tweetsContainer {
   margin-left: 30%;
