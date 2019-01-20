@@ -8,7 +8,7 @@ import './styling/App.scss';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="app">
         <Header />
         <Tweets />
       </div>

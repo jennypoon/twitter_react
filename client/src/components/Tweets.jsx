@@ -13,8 +13,10 @@ class Tweets extends Component {
 
     this.getList = this.getList.bind(this)
     this.displayTweets = this.displayTweets.bind(this)
+    this.likeTweet = this.likeTweet.bind(this)
   }
 
+//GET TWEETS
   getList() {
     axios.get("/api/tweets")
       .then((res) => {
@@ -22,20 +24,29 @@ class Tweets extends Component {
       })
   }
 
-  displayTweets(tweets) {
-    return tweets.map((tweet) => {
-      console.log("DISPLAY TWEETS", tweets)
-      return <TweetCard tweet={tweet}/>
+//UPDATE STATUS OF LIKE
+  likeTweet(like, tweet){
+   axios.post("/api/likeTweet", {
+      tweetid: tweet.id,
+      tweetlike: like
+    })
+    .then((res) => {
+      this.getList()
     })
   }
 
+  //RENDER INDIVIDUAL TWEETS
+  displayTweets(tweets) {
+    return tweets.map((tweet) => {
+      return <TweetCard key={tweet.id} tweet={tweet} likeTweet={this.likeTweet} update={this.getList}/>
+    })
+  }
 
   componentDidMount() {
     this.getList();
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="tweetsContainer">
         {this.displayTweets(this.state.tweets)}

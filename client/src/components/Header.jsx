@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       <div className="header">
         <img className="logo_icon" src={Siteicon} alt="bird logo"/>
-        <h1>Twittr</h1>
+        <h1 className="title">Twittr</h1>
       </div>
     )
   }
