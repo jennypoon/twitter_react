@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 $green: #17A589;
 
+#root {
+  font-family: 'Roboto', sans-serif;
+}
+
 /*HEADER*/
 .title {
 margin-left: 50%;
@@ -34,8 +38,6 @@ padding-top: 50px;
 
 h2 {
   font-size: 15px;
-  font-family: 'Roboto', sans-serif;
-
 }
 
 .tweetCard {
